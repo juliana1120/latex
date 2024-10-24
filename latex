@@ -1,0 +1,2589 @@
+\begin{document}
+
+\chapter{Derivadas Parciales}
+Las derivadas parciales son una herramienta esencial en el análisis de funciones de varias variables, como las que se encuentran en el cálculo multivariable. Estas derivadas permiten evaluar cómo cambia el valor de una función al variar solo una de sus variables, mientras se mantienen constantes las demás. Este concepto es fundamental para comprender el comportamiento local de las funciones en un espacio multidimensional.
+
+\section{Funciones de varias variables}
+
+\begin{defi}
+El estudio de funciones de varias variables es una extensión natural del análisis 
+de funciones de una variable. Este enfoque es esencial para modelar situaciones
+en las que una cantidad depende de dos o más variables. En este capítulo, nos 
+centraremos en el dominio, rango, curvas de nivel y superficies de nivel para
+funciones de dos variables, conceptos fundamentales para comprender cómo se 
+comportan estas funciones.
+
+\end{defi}
+
+
+\begin{defi}[Dominio]
+El dominio de una función se refiere al conjunto de todos los posibles valores de entrada para los cuales la función está definida. En el contexto del cálculo multivariable, donde las funciones pueden depender de varias variables, el dominio se representa también como un subconjunto del espacio $\mathbb{R}^2$ que es el conjunto de todos los pares ordenados $( x ,y )$, representando un plano bidimensional.
+
+\end{defi}
+
+\textbf{}
+Con este ejercicio aprenderemos a  identificar las condiciones necesarias para que una función se mantenga dentro de su dominio, como evitar divisiones por cero, raíces cuadradas de números negativos y otros casos que pueden causar indefiniciones. Este conocimiento es crucial para realizar un análisis completo de la función y para comprender su comportamiento en diferentes regiones del espacio.
+
+\begin{ejem}
+
+ \textbf{}
+\newline
+
+    Con el ejemplo de la siguiente función $f(x, y) = \frac{1}{x^2 + y^2 - 1}.$ queremos ilustrar cómo identificar y determinar el dominio de una función de varias variables.
+
+\textbf{ }
+\newline
+Determine el dominio de la función $f(x, y) = \frac{1}{x^2 + y^2 - 1}.$
+
+\textbf{}
+\newline
+\textbf{Solución: }
+\newline
+\end{ejem}
+\textbf{Paso 1:  Identificación  de  Restricciones}
+
+\textbf{}
+\newline
+Para encontrar el dominio de esta función, debemos determinar cuándo la función está definida. Dado que estamos trabajando con una fracción, debemos asegurarnos de que el denominador no sea cero. 
+
+Por lo tanto, necesitamos resolver la siguiente desigualdad:
+\begin{align*}
+    f(x, y) = \frac{1}{x^2 + y^2 - 1}.
+\end{align*}
+
+\textbf{Paso 2: Análisis de la Desigualdad}
+
+\textbf{}
+\newline
+La ecuación :
+\begin{align*}
+    x^2 + y^2 - 1 = 0
+\end{align*}
+describe un círculo de radio 1 centrado en el origen \((0, 0)\) en el plano \(xy\). La función \(f(x, y)\) estará indefinida en los puntos que pertenecen a este círculo.
+    
+\textbf{}
+\newline
+\textbf{Paso 3: Determinación del Dominio}
+
+\textbf{}
+\newline
+El dominio de la función se puede expresar como:
+
+\begin{align*}
+    D = \{ (x, y) \in \mathbb{R}^2 \mid x^2 + y^2 \neq 1 \}.
+\end{align*}
+
+Esto significa que el dominio incluye todos los pares de números reales \((x, y)\) excepto aquellos que están en el círculo de radio 1. 
+    
+\textbf{}
+\newline
+\textbf{Paso 4: Representación del Dominio}
+
+\textbf{}
+\newline
+Visualmente, el dominio de \(f(x, y)\) sería todo el plano \(xy\) menos el círculo de radio 1. Esto se puede representar gráficamente como el área exterior e interior del círculo, excluyendo el contorno.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{CAPITULOS/imagenss/Dominio.jpeg}
+    \caption{Dominio de la función $f(x, y) = \frac{1}{x^2 + y^2 - 1}.$}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{defi}[Rango]
+
+\textbf{}
+\newline
+El rango de una función $f(x, y)$ es el conjunto de todos los valores que $f(x, y)$ puede tomar a medida que $(x, y)$ varía sobre su dominio. Es decir:
+
+\begin{align*}
+    Ran_f = \{z \in \mathbb{R} \ | \ z = f(x, y) \text{ para algún } (x, y) \in Dom_f\}.
+\end{align*}
+    
+\end{defi}
+ Al calcular el rango, se busca desarrollar e identificar el comportamiento de la función, determinar su valor mínimo y analizar cómo varía con respecto a las entradas.
+    
+\begin{ejem}
+    
+\textbf{}
+\newline
+Determine el rango de la funcion $f(x, y) = x^2 + y^2 - 4x - 6y + 9.$
+     
+\end{ejem}
+    
+\textbf{}
+\newline
+\textbf{Solución: }
+    
+\textbf{}
+\newline
+\textbf{Paso1: Primero, podemos reescribir la función completando el cuadrado }
+\begin{align*}
+    f(x, y) = (x^2 - 4x) + (y^2 - 6y) + 9.
+\end{align*}
+    
+\textbf{}
+\newline
+\textbf{Paso2: Completando el cuadrado para \( x \) }
+\begin{align*}
+    x^2 - 4x = (x - 2)^2 - 4.
+\end{align*}
+    
+\textbf{}
+\newline
+\textbf{Paso3: Completando el cuadrado para \( y \) }
+\begin{align*}
+    y^2 - 6y = (y - 3)^2 - 9.
+\end{align*}
+    
+\textbf{}
+\newline
+\textbf{Paso4: Sustituyendo de nuevo en la función, y obtenemos }
+\begin{align*}
+    f(x, y) = (x - 2)^2 - 4 + (y - 3)^2 - 9 + 9.
+\end{align*}
+    
+\textbf{}
+\newline
+\textbf{Paso5: Simplificando, y tenemos }
+\begin{align*}
+    f(x, y) = (x - 2)^2 + (y - 3)^2 - 4.
+\end{align*}
+    
+\textbf{}
+\newline
+\textbf{Paso6: Identificación del valor mínimo }
+\newline
+El término \( (x - 2)^2 + (y - 3)^2 \) representa la suma de dos cuadrados, lo cual es siempre mayor o igual a cero. Por lo tanto, el valor mínimo de esta función ocurre cuando \( (x - 2)^2 + (y - 3)^2 = 0 \), lo que sucede cuando \( x = 2 \) y \( y = 3 \). En este caso:
+\begin{align*}
+    f(2, 3) = 0 - 4 = -4.
+\end{align*}
+Así que el valor mínimo de la función es \( -4 \).
+    
+\textbf{}
+\newline
+\textbf{Paso7: Comportamiento para valores grandes}
+
+A medida que \( x \) y \( y \) tienden a \( \infty \) o \( -\infty \), el término \( (x - 2)^2 + (y - 3)^2 \) también tiende a \( \infty \). Por lo tanto, \( f(x, y) \) no tiene un límite superior y tiende a \( \infty \).
+\newline
+El rango de la función \( f(x, y) = x^2 + y^2 - 4x - 6y + 9 \) es:
+
+\begin{align*}
+    [-4, \infty).
+\end{align*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{CAPITULOS/imagenss/Rango.jpeg}
+    \caption{Rango de la función \( f(x, y) = x^2 + y^2 - 4x - 6y + 9 \)}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{defi}[Curvas de nivel]
+
+\textbf{}
+\newline
+Las curvas de nivel de una función $f(x, y)$ son las curvas que se obtienen manteniendo constante el valor de la función. Es decir, son las soluciones a la ecuación:
+
+\[
+f(x, y) = c,
+\]
+donde $c$ es una constante. Cada valor de $c$ genera una curva de nivel diferente, que representa una altura constante en la gráfica tridimensional de $f(x, y)$.
+    
+\end{defi}
+
+Con este ejercicio buscamos desarrollar una visualización clara de cómo cambian los valores de la función en diferentes puntos del espacio.
+        
+\begin{ejem}
+
+Para la función $f(x, y) = x^2 + y^2$, las curvas de nivel están dadas por:
+\end{ejem}
+\begin{align*}
+    x^2 + y^2 = c,
+\end{align*}
+
+
+que son círculos concéntricos de radio $\sqrt{c}$ con centro en el origen. Estos representan las proyecciones en el plano $xy$ de diferentes alturas de la parábola tridimensional.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{CAPITULOS/imagenss/figura9.png}
+    \caption{Curvas de nivel de $f(x, y) = x^2 + y^2$.}
+\end{figure}
+
+\begin{defi}[Superficies de Nivel]
+
+\textbf{}
+\newline
+Una superficie de nivel es una extensión de las curvas de nivel a funciones de tres variables. Si tenemos una función $f(x, y, z)$, las superficies de nivel son las superficies que cumplen la ecuación:
+
+\[
+f(x, y, z) = c,
+\]
+donde $c$ es una constante. Estas superficies representan un valor constante de la función en el espacio tridimensional.
+
+    
+\end{defi}
+
+\begin{ejem}
+    Visualizaremos los valores constantes de la función en el espacio tridimensional.
+
+\textbf{}
+\newline
+    Consideremos la función $f(x, y, z) = x^2 + y^2 + z^2$. Las superficies de nivel estarán dadas por:
+
+\[
+x^2 + y^2 + z^2 = c,
+\]
+que son esferas centradas en el origen con radio $\sqrt{c}$.
+
+\end{ejem}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{CAPITULOS/imagenss/grafia8.png}
+    \caption{Superficie de nivel \( x^2 + y^2 + z^2 = c \).}
+    \label{fig:superficie_esfera}
+\end{figure}
+
+\section{Límites y Continuidad}
+\begin{defi}[Límite en Funciones de Varias Variables]
+
+\textbf{}
+\newline
+Los límites de funciones de varias variables extienden la idea de los límites de una variable al caso en el que las funciones dependen de dos o más variables.
+
+Si tenemos una función \( f(x, y) \) de dos variables, decimos que el límite de \( f(x, y) \) cuando \( (x, y) \) se aproxima al punto \( (a, b) \) es \( L \) si:
+
+\[
+\lim_{(x, y) \to (a, b)} f(x, y) = L
+\]
+
+Esto significa que, a medida que los puntos \( (x, y) \) se acercan a \( (a, b) \) desde cualquier dirección en el plano, los valores de la función \( f(x, y) \) se aproximan a \( L \). Formalmente, para cualquier número \( \epsilon > 0 \), existe un \( \delta > 0 \) tal que si la distancia entre \( (x, y) \) y \( (a, b) \) es menor que \( \delta \), entonces la diferencia entre \( f(x, y) \) y \( L \) es menor que \( \epsilon \). Esto se expresa como:
+
+\textbf{}
+\newline
+$\text{Para todo } \epsilon > 0, \text{ existe un } \delta > 0 \text{ tal que si } 0 < \sqrt{(x - a)^2 + (y - b)^2} < \delta, \text{ entonces : }$ 
+\begin{align*}
+    |f(x, y) - L| < \epsilon.
+\end{align*}
+
+\textbf{}
+\newline
+Es importante notar que los límites en varias variables son más complejos que en una variable, porque \( (x, y) \) puede aproximarse al punto \( (a, b) \) por distintas trayectorias (líneas, parábolas, etc.). Para que el límite exista, el valor de la función debe ser el mismo independientemente de la dirección de aproximación.
+    
+\end{defi}
+
+\begin{ejem}
+    Analizaremos el comportamiento de la función cuando las variables se acercan a ciertos valores, lo cual es crucial para comprender fenómenos como la diferenciación y la integración en múltiples dimensiones.
+
+\textbf{}
+\newline
+    Encuentra el siguiente límite, si existe:
+    
+\end{ejem}
+
+\begin{align*}
+    \lim_{(x, y) \to (0, 0)} \frac{x^2y}{x^2 + y^2}
+\end{align*}
+
+\textbf{Solución}
+
+\textbf{}
+\newline
+\textbf{Paso 1: Aproximación por la recta \( y = 0 \)}
+
+\textbf{}
+\newline
+Primero, intentemos aproximarnos al origen a lo largo de la recta \( y = 0 \) (esto significa que estamos considerando puntos donde \( y = 0 \)).
+
+Sustituimos \( y = 0 \) en la función:
+
+\begin{align*}
+    \frac{x^2y}{x^2 + y^2} = \frac{x^2(0)}{x^2 + 0^2} = 0
+\end{align*}
+
+Entonces, cuando nos aproximamos al origen por la recta \( y = 0 \), el valor del límite es 0.
+
+\textbf{}
+\newline
+\textbf{Paso 2: Aproximación por la recta \( x = 0 \)}
+
+\textbf{}
+\newline
+Ahora, aproximémonos al origen a lo largo de la recta \( x = 0 \) (esto significa que estamos considerando puntos donde \( x = 0 \)).
+
+Sustituimos \( x = 0 \) en la función:
+
+\begin{align*}
+    \frac{x^2y}{x^2 + y^2} = \frac{(0)^2 y}{0^2 + y^2} = 0
+\end{align*}
+
+Por lo tanto, cuando nos aproximamos al origen por la recta \( x = 0 \), el valor del límite también es 0.
+
+\textbf{}
+\newline
+\textbf{Paso 3: Aproximación por la recta \( y = x \)}
+
+\textbf{}
+\newline
+Ahora, aproximémonos al origen a lo largo de la recta \( y = x \) (esto significa que estamos considerando puntos donde \( y = x \)).
+
+Sustituimos \( y = x \) en la función:
+
+\begin{align*}
+    \frac{x^2y}{x^2 + y^2} = \frac{x^2(x)}{x^2 + x^2} = \frac{x^3}{2x^2} = \frac{x}{2}
+\end{align*}
+
+A medida que \( x \to 0 \), observamos que \( \frac{x}{2} \to 0 \).
+
+Entonces, cuando nos aproximamos al origen por la recta \( y = x \), el valor del límite también es 0.
+
+\textbf{}
+\newline
+\textbf{Paso 4: Aproximación en coordenadas polares}
+
+\textbf{}
+\newline
+Una manera más general de aproximarse al origen es usando \textit{coordenadas polares}. Esto nos permite comprobar el límite desde cualquier dirección. En coordenadas polares, \( x = r \cos \theta \) y \( y = r \sin \theta \), donde \( r \) es la distancia radial al origen y \( \theta \) es el ángulo.
+
+Reescribimos la función en coordenadas polares:
+
+\begin{align*}
+    f(x, y) = \frac{x^2y}{x^2 + y^2} = \frac{(r \cos \theta)^2 (r \sin \theta)}{(r \cos \theta)^2 + (r \sin \theta)^2}
+\end{align*}
+
+Simplificamos la expresión:
+
+\begin{align*}
+    = \frac{r^2 \cos^2 \theta \cdot r \sin \theta}{r^2(\cos^2 \theta + \sin^2 \theta)}
+\end{align*}
+
+Sabemos que \( \cos^2 \theta + \sin^2 \theta = 1 \), por lo que la expresión se reduce a:
+
+\begin{align*}
+    = \frac{r^3 \cos^2 \theta \sin \theta}{r^2} = r \cos^2 \theta \sin \theta
+\end{align*}
+
+A medida que \( r \to 0 \), toda la expresión \( r \cos^2 \theta \sin \theta \) tiende a 0, sin importar el valor de \( \theta \).
+
+\textbf{}
+\newline
+\textbf{Paso 5: Concluimos}
+
+\textbf{}
+\newline
+Ya que hemos obtenido que el límite es 0 en todas las trayectorias que hemos considerado (incluyendo la aproximación general en coordenadas polares), podemos concluir que:
+
+\begin{align*}
+    \lim_{(x, y) \to (0, 0)} \frac{x^2y}{x^2 + y^2} = 0
+\end{align*}
+
+Este es el valor del límite.
+\textbf{}
+\newline
+
+\begin{defi}[Continuidad en Funciones de Varias Variables]
+
+\textbf{}
+\newline
+Una función de varias variables \( f(x, y) \) es continua en un punto \( (a, b) \) si el límite de la función cuando \( (x, y) \) tiende a \( (a, b) \) es igual al valor de la función en ese punto. Es decir:
+
+\[
+\lim_{(x, y) \to (a, b)} f(x, y) = f(a, b)
+\]
+
+Para que una función sea continua en \( (a, b) \), deben cumplirse tres condiciones:
+
+1. \( f(a, b) \) está definida.
+\newline
+2. Existe el límite \( \lim_{(x, y) \to (a, b)} f(x, y) \).
+\newline
+3. El límite es igual al valor de la función en \( (a, b) \), es decir, \( \lim_{(x, y) \to (a, b)} f(x, y) = f(a, b) \).
+    
+\end{defi}
+
+\begin{ejem}
+    Se va a identificar y analizara las condiciones bajo las cuales una función es continua.
+    
+\textbf{}
+\newline
+Determina si la siguiente función es continua en el punto \( (0,0) \):
+
+    
+\end{ejem}
+
+
+
+\begin{align*}
+    f(x, y) = 
+\begin{cases} 
+\frac{x^2 y}{x^2 + y^2} & \text{si } (x, y) \neq (0,0), \\
+0 & \text{si } (x, y) = (0,0).
+\end{cases}
+\end{align*}
+
+\textbf{Solución}
+
+\textbf{}
+\newline
+Para verificar la \textit{continuidad} de una función en un punto, se deben cumplir tres condiciones:
+
+1. \( f(0,0) \) debe estar definida.
+\newline
+2. El límite de \( f(x, y) \) cuando \( (x, y) \to (0,0) \) debe existir.
+\newline
+3. El valor del límite debe ser igual al valor de la función en ese punto, es decir, \( \lim_{(x, y) \to (0,0)} f(x, y) = f(0,0) \).
+
+\textbf{}
+\newline
+\textbf{Paso 1: Verificar que \( f(0,0) \) está definida}
+
+\textbf{}
+\newline
+La función \( f(x, y) \) está definida por dos partes. En el punto \( (0,0) \), se nos dice explícitamente que \( f(0,0) = 0 \). Por lo tanto, \( f(0,0) \) está bien definida y es igual a 0.
+
+\textbf{}
+\newline
+\textbf{Paso 2: Encontrar el límite cuando \( (x, y) \to (0,0) \)}
+
+\textbf{}
+\newline
+Ahora necesitamos verificar si el límite de \( f(x, y) \) cuando \( (x, y) \) se aproxima a \( (0,0) \) existe y si es igual a 0. Para hacer esto, probamos diferentes trayectorias de aproximación al punto \( (0,0) \).
+
+\textbf{}
+\newline
+Aproximación por la recta \( y = 0 \)
+
+Primero, aproximémonos al origen a lo largo de la recta \( y = 0 \). En este caso, \( f(x, 0) \) es:
+
+\begin{align*}
+    f(x, 0) = \frac{x^2 (0)}{x^2 + 0^2} = 0
+\end{align*}
+
+Por lo tanto, a lo largo de la recta \( y = 0 \), el límite es 0.
+
+\textbf{}
+\newline
+Aproximación por la recta \( x = 0 \)
+
+\textbf{}
+\newline
+Ahora, aproximémonos al origen a lo largo de la recta \( x = 0 \). En este caso, \( f(0, y) \) es:
+
+\begin{align*}
+    f(0, y) = \frac{0^2 y}{0^2 + y^2} = 0
+\end{align*}
+
+Por lo tanto, a lo largo de la recta \( x = 0 \), el límite también es 0.
+
+\textbf{}
+\newline
+Aproximación por la recta \( y = x \)
+
+\textbf{}
+\newline
+A continuación, aproximémonos al origen a lo largo de la recta \( y = x \). Sustituyendo \( y = x \) en la función, obtenemos:
+
+\begin{align*}
+    f(x, x) = \frac{x^2 (x)}{x^2 + x^2} = \frac{x^3}{2x^2} = \frac{x}{2}
+\end{align*}
+
+A medida que \( x \to 0 \), \( \frac{x}{2} \to 0 \).
+
+Por lo tanto, el límite a lo largo de la recta \( y = x \) también es 0.
+
+\textbf{}
+\newline
+Aproximación en coordenadas polares
+
+\textbf{}
+\newline
+Para asegurarnos de que el límite es 0 independientemente de la dirección, podemos cambiar a \textit{coordenadas polares}, donde \( x = r \cos \theta \) y \( y = r \sin \theta \), y la distancia al origen es \( r = \sqrt{x^2 + y^2} \). La función se convierte en:
+
+\begin{align*}
+    f(x, y) = \frac{r^2 \cos^2 \theta \cdot r \sin \theta}{r^2} = r \cos^2 \theta \sin \theta
+\end{align*}
+
+A medida que \( r \to 0 \), \( r \cos^2 \theta \sin \theta \to 0 \), sin importar el valor de \( \theta \).
+
+\textbf{}
+\newline
+\textbf{Paso 3: Comparar el límite con el valor de la función en \( (0,0) \)}
+
+\textbf{}
+\newline
+Hemos calculado que el límite de \( f(x, y) \) cuando \( (x, y) \to (0,0) \) es 0 en todas las direcciones. Como el valor de la función en \( (0,0) \) también es 0, podemos concluir que:
+
+\begin{align*}
+    \lim_{(x, y) \to (0, 0)} f(x, y) = f(0,0) = 0
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 4: Concluimos}
+
+\textbf{}
+\newline
+Dado que el límite existe y es igual al valor de la función en \( (0,0) \), la función \( f(x, y) \) es \textit{continua} en el punto \( (0,0) \).
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=0.5\linewidth]{image.png}
+    \caption{ejemplo Limite y continuidad}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{defi}[Límites por Coordenadas Polares]
+
+\textbf{}
+\newline
+Una técnica útil para determinar la existencia de límites en funciones de dos variables es cambiar a coordenadas polares. En este sistema, se sustituyen \( x \) y \( y \) por sus expresiones en términos del radio \( r \) y el ángulo \( \theta \):
+
+\begin{align*}
+    x = r \cos \theta, \quad y = r \sin \theta
+\end{align*}
+
+De esta forma, la distancia \( \sqrt{x^2 + y^2} \) se simplifica a \( r \), y podemos estudiar el comportamiento de la función cuando \( r \to 0 \). Si el límite depende de \( \theta \), el límite no existe.
+    
+\end{defi}
+
+
+\begin{ejem}
+    Se busca explorar la discontinuidade y la influencia de la dirección desde la cual se aborda un punto.
+    
+\textbf{}
+\newline
+Consideremos la función \( f(x, y) = \frac{xy}{x^2 + y^2} \). En coordenadas polares, tenemos \( x = r \cos \theta \) y \( y = r \sin \theta \), por lo que:
+    
+\end{ejem}
+
+\begin{align*}
+    f(r, \theta) = \frac{(r \cos \theta)(r \sin \theta)}{r^2} = \cos \theta \sin \theta = \frac{1}{2} \sin(2\theta)
+\end{align*}
+
+El valor de la función depende de \( \theta \), lo que significa que el límite no existe cuando \( r \to 0 \).
+
+\textbf{}
+\newline
+\textbf{Propiedades de los Límites: }
+Algunas propiedades importantes de los límites en funciones de varias variables incluyen:
+
+    \item La suma de límites: 
+    \begin{align*}
+         \lim_{(x, y) \to (a, b)} [f(x, y) + g(x, y)] = \lim_{(x, y) \to (a, b)} f(x, y) + \lim_{(x, y) \to (a, b)} g(x, y)
+    \end{align*}
+    
+    \item( El producto de límites:) 
+    \begin{align*}
+          \lim_{(x, y) \to (a, b)} [f(x, y) \cdot g(x, y)] = \lim_{(x, y) \to (a, b)} f(x, y) \cdot \lim_{(x, y) \to (a, b)} g(x, y)
+    \end{align*}
+    
+    \item (El cociente de límites, siempre que) \( \lim_{(x, y) \to (a, b)} g(x, y) \neq 0 \):
+    \begin{align*}
+        \lim_{(x, y) \to (a, b)} \frac{f(x, y)}{g(x, y)} = \frac{\lim_{(x, y) \to (a, b)} f(x, y)}{\lim_{(x, y) \to (a, b)} g(x, y)}
+    \end{align*}
+
+
+
+\section{Derivadas Parciales}
+\begin{defi}[Derivadas Parciales]
+\textbf{} 
+\newline
+Las derivadas parciales son una extensión del concepto de derivada a funciones de varias variables. Cuando trabajamos con una función \( f(x, y) \) que depende de más de una variable, las derivadas parciales nos permiten entender cómo cambia la función al variar solo una de las variables, mientras mantenemos las otras constantes. 
+
+Se denotan como \( \frac{\partial f}{\partial x} \) y \( \frac{\partial f}{\partial y} \) para las derivadas parciales con respecto a \( x \) e \( y \), respectivamente. Matemáticamente, la derivada parcial de \( f \) con respecto a \( x \) se define como:
+\begin{align*}
+    \frac{\partial f}{\partial x} = \lim_{h \to 0} \frac{f(x+h, y) - f(x, y)}{h}
+\end{align*}
+    
+\end{defi}
+
+\textbf{}
+\newline
+\begin{ejem}
+    Buscamos una comprensión de la tasa de cambio de la función $f(x, y) = 3x^2y + 2y^3 - 4xy + 5.$ al variar solo una de sus variables, mientras se mantienen constantes las demás.
+    
+\textbf{}
+\newline
+\begin{enumerate}
+    \item Calcule la derivada parcial de \( f \) con respecto a \( x \) y con respecto a \( y \).
+    \item Evalúe ambas derivadas parciales en el punto \( (1, 2) \).
+\end{enumerate}
+
+\end{ejem}
+
+\textbf{Solución }
+
+\textbf{}
+\newline
+\textbf{Paso1: Cálculo de las derivadas parciales con respecto a \( x \)}
+
+\textbf{}
+\newline
+\begin{align*}
+    \frac{\partial f}{\partial x} = \frac{\partial}{\partial x}(3x^2y + 2y^3 - 4xy + 5) = 6xy - 4y
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso2: Cálculo de las derivadas parciales con respecto a \( y \)}
+\begin{align*}
+    \frac{\partial f}{\partial y} = \frac{\partial}{\partial y}(3x^2y + 2y^3 - 4xy + 5) = 3x^2 + 6y^2 - 4x
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso3: Evaluación \( \frac{\partial f}{\partial x} \) en el punto \( (1, 2) \)}
+
+\textbf{}
+\newline
+\begin{align*}
+    \frac{\partial f}{\partial x}(1, 2) = 6(1)(2) - 4(2) = 12 - 8 = 4
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso3: Evaluación \( \frac{\partial f}{\partial y} \) en el punto \( (1, 2) \)}
+
+\textbf{}
+\newline
+\begin{align*}
+    \frac{\partial f}{\partial y}(1, 2) = 3(1)^2 + 6(2)^2 - 4(1) = 3 + 24 - 4 = 23
+\end{align*}
+Las derivadas parciales de la función en el punto \( (1, 2) \) son:
+\begin{itemize}
+    \item \( \frac{\partial f}{\partial x}(1, 2) = 4 \)
+    \item \( \frac{\partial f}{\partial y}(1, 2) = 23 \)
+\end{itemize}
+
+\textbf{}
+\newline
+\begin{ejem}
+    Derivadas Parciales con la Regla del Producto
+\end{ejem}
+
+\textbf{}
+\newline
+Considera la función:
+
+\begin{align*}
+    f(x, y) = g(x) \cdot h(y) = (\sin(x))(3y^2)
+\end{align*}
+
+donde \( g(x) = \sin(x) \) y \( h(y) = 3y^2 \).
+
+\textbf{}
+\newline
+\textbf{Paso1: Derivada Parcial con Respecto a \( x \)}
+
+Aplicamos la regla del producto, considerando \( h(y) \) como constante:
+
+\begin{align*}
+    \frac{\partial f}{\partial x} = h(y) \cdot \frac{\partial g}{\partial x} = 3y^2 \cdot \frac{\partial (\sin(x))}{\partial x}
+\end{align*}
+
+\textbf{Paso2: Calculamos:}
+
+\begin{align*}
+    \frac{\partial (\sin(x))}{\partial x} = \cos(x)
+\end{align*}
+
+Por lo tanto,
+
+\begin{align*}
+    \frac{\partial f}{\partial x} = 3y^2 \cdot \cos(x)
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso1: Derivada Parcial con Respecto a \( y \)}
+
+Ahora consideramos \( g(x) \) como constante:
+
+\begin{align}
+    \frac{\partial f}{\partial y} = g(x) \cdot \frac{\partial h}{\partial y} = \sin(x) \cdot \frac{\partial (3y^2)}{\partial y}
+\end{align}
+
+\textbf{Paso2: Calculamos:}
+
+\begin{align*}
+    \frac{\partial (3y^2)}{\partial y} = 6y
+\end{align*}
+
+Así que,
+
+\[\frac{\partial f}{\partial y} = \sin(x) \cdot (6y) = 6y \sin(x)\]
+
+\textbf{}
+\newline
+Las derivadas parciales son:
+
+\begin{align*}
+    \frac{\partial f}{\partial x} = 3y^2 \cos(x)
+\end{align*}
+
+\begin{align*}
+    \frac{\partial f}{\partial y} = 6y \sin(x)
+\end{align*}
+
+\begin{defi}[Derivadas de Orden Superior]
+
+\textbf{}
+\newline
+   Las derivadas de orden superior son derivadas obtenidas al derivar repetidamente una función. La primera derivada de \( f(x) \) se denota como \( f'(x) \) o \( \frac{df}{dx} \). La segunda derivada se denota como \( f''(x) \) o \( \frac{d^2f}{dx^2} \). En general, la \( n \)-ésima derivada se representa como \( f^{(n)}(x) \) o \( \frac{d^n f}{dx^n} \), y se utiliza para analizar la concavidad y el comportamiento de la función.
+ 
+\end{defi}
+\textbf{}
+\newline
+\begin{ejem}
+    Considera la función:
+
+\begin{align*}
+    f(x) = x^4 - 3x^3 + 2x^2 - x + 5
+\end{align*}
+\end{ejem}
+
+
+
+\textbf{Paso1: Primera Derivada}
+
+\[f'(x) = 4x^3 - 9x^2 + 4x - 1\]
+
+\textbf{Paso2: Segunda Derivada}
+
+\[f''(x) = 12x^2 - 18x + 4\]
+
+\textbf{Paso3: Tercera Derivada}
+
+\[f'''(x) = 24x - 18\]
+
+\textbf{Paso4: Cuarta Derivada}
+
+\[f^{(4)}(x) = 24\]
+
+\textbf{Resultados}
+
+Las derivadas de orden superior son:
+
+\begin{align*}
+  f'(x) &= 4x^3 - 9x^2 + 4x - 1 \\
+     f''(x)& = 12x^2 - 18x + 4 \\
+     f'''(x) &= 24x - 18\\
+  f^{(4)}(x) &= 24\\
+\end{align*}
+   
+
+
+\begin{defi}[Derivadas Mixtas]
+
+\textbf{}
+\newline
+Las derivadas mixtas son derivadas parciales de una función multivariable que se obtienen al derivar respecto a diferentes variables. Para una función \( f(x, y) \), una derivada mixta de segundo orden se expresa como:
+
+\begin{align*}
+    \frac{\partial^2 f}{\partial x \partial y}
+\end{align*}
+
+Esto implica que primero se deriva respecto a \( y \) y luego el resultado respecto a \( x \). Si las derivadas son continuas, se cumple el teorema de Schwarz, que afirma que el orden de derivación no afecta el resultado:
+
+\begin{align*}
+    \frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}
+\end{align*}
+
+    
+\end{defi}
+
+\begin{ejem}
+    Considera la función de dos variables:
+
+\begin{align*}
+    f(x, y) = x^2y + \sin(xy)
+\end{align*}
+\end{ejem}
+\textbf{Paso1: Derivada Parcial de \( f(x, y) \) con Respecto a \( x \)}
+
+\begin{align*}
+    \frac{\partial f}{\partial x} = 2xy + y \cos(xy)
+\end{align*}
+
+\textbf{Paso1: Derivada Parcial de \( f(x, y) \) con Respecto a \( y \)}
+
+\begin{align*}
+    \frac{\partial f}{\partial y} = x^2 + x \cos(xy)
+\end{align*}
+
+\textbf{Derivada Mixta}
+
+\textbf{}
+\newline
+La derivada mixta se obtiene derivando primero con respecto a \( x \) y luego con respecto a \( y \):
+
+\begin{align*}
+    \frac{\partial^2 f}{\partial x \partial y} = 2x + \cos(xy) - xy \sin(xy)
+\end{align*}
+
+\textbf{Resultado}
+
+La derivada mixta de la función es:
+
+\begin{align*}
+    \frac{\partial^2 f}{\partial x \partial y} = 2x + \cos(xy) - xy \sin(xy)
+\end{align*}
+
+\textbf{}
+\newline
+
+\begin{defi}[Diferenciación Parcial Implícita]
+
+\textbf{}
+\newline
+La diferenciación parcial implícita es un método que se utiliza para encontrar derivadas parciales de funciones que no están expresadas de manera explícita. En lugar de tener una función definida como 
+
+\begin{align*}
+    y =f(x)
+\end{align*}
+
+trabajamos con una relación entre varias variables, como 
+
+\begin{align*}
+    F(x, y)= 0.
+\end{align*}
+    
+\end{defi}
+
+
+\begin{ejem}
+    Considera la relación implícita entre \( x \) y \( y \):
+\end{ejem}
+\begin{align*}
+    F(x, y) = x^2 + y^2 - 1 = 0
+\end{align*}
+
+
+
+
+
+Esta ecuación define un círculo de radio 1.
+
+\textbf{}
+\newline
+\textbf{Paso 1: Derivar la ecuación}
+
+\textbf{}
+\newline
+Derivamos ambos lados de la ecuación con respecto a \( x \):
+
+\begin{align*}
+    \frac{d}{dx}(x^2) + \frac{d}{dx}(y^2) = 0
+\end{align*}
+
+Utilizando la regla de la cadena para la derivada de \( y^2 \):
+
+\begin{align*}
+    2x + 2y \frac{dy}{dx} = 0
+\end{align*}
+
+\textbf{Paso 2: Aislar la derivada}
+
+\textbf{}
+\newline
+Aislamos la derivada \( \frac{dy}{dx} \):
+
+\begin{align*}
+    2y \frac{dy}{dx} = -2x \implies \frac{dy}{dx} = -\frac{x}{y}
+\end{align*}
+
+\textbf{Resultado}
+
+\textbf{}
+\newline
+La derivada parcial de \( y \) con respecto a \( x \) es:
+
+\begin{align*}
+    \frac{dy}{dx} = -\frac{x}{y}
+\end{align*}
+
+Esto significa que, para cualquier punto en el círculo definido por la ecuación \( x^2 + y^2 - 1 = 0 \), podemos calcular cómo cambia \( y \) respecto a cambios en \( x \).
+
+
+\section{Regla de la Cadena }
+\begin{defi}[Regla de la Cadena]
+\textbf{} 
+\newline
+    La regla de la cadena es una fórmula fundamental en cálculo que se utiliza para derivar funciones compuestas. Cuando tienes una función compuesta, es decir, una función dentro de otra función, la regla de la cadena te permite encontrar la derivada de la función compuesta en términos de las derivadas de las funciones individuales.
+
+\textbf{} 
+\newline
+    Si \( y = f(g(x)) \), donde \( f \) y \( g \) son funciones, la regla de la cadena establece que la derivada de \( y \) con respecto a \( x \) se calcula como:
+
+\begin{align*}
+    \frac{dy}{dx} = \frac{dy}{dg} \cdot \frac{dg}{dx} = f'(g(x)) \cdot g'(x)
+\end{align*}
+
+\end{defi}
+        
+\textbf{Pasos para Aplicarla}
+
+\begin{enumerate}
+    \item \textbf{Identifica las funciones}: Reconoce cuál es la función exterior \( f \) y cuál es la función interior \( g \).
+    \item \textbf{Deriva la función exterior}: Encuentra la derivada de la función exterior \( f \) con respecto a \( g \).
+    \item \textbf{Deriva la función interior}: Encuentra la derivada de la función interior \( g \) con respecto a \( x \).
+    \item \textbf{Multiplica las derivadas}: Multiplica la derivada de la función exterior evaluada en \( g(x) \) por la derivada de la función interior.
+\end{enumerate}
+
+\begin{ejem}
+   Derivar la función \( z = \sin(x^2 + y^2) \) con respecto a \( x \) y \( y \) usando la regla de la cadena. 
+\end{ejem}
+
+\textbf{} 
+\newline
+\textbf{Paso 1: Identificar las funciones}
+\begin{itemize}
+    \item Función compuesta:
+    \begin{align*}
+        z &= f(u) \quad \text{donde} \quad f(u) = \sin(u) \\
+        u &= g(x, y) \quad \text{donde} \quad g(x, y) = x^2 + y^2
+    \end{align*}
+\end{itemize}
+
+\textbf{} 
+\newline
+\textbf{Paso 2: Derivar la función exterior}
+
+La derivada de la función exterior \( f(u) \) es:
+\begin{align*}
+    f'(u) = \cos(u)
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf{Paso 3: Derivar la función interior}
+
+La derivada de \( g(x, y) \) con respecto a \( x \) es:
+\begin{align*}
+    \frac{\partial g}{\partial x} = 2x
+\end{align*}
+
+\textbf{} 
+\newline
+La derivada de \( g(x, y) \) con respecto a \( y \) es:
+\begin{align*}
+    \frac{\partial g}{\partial y} = 2y
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf{Paso 4: Aplicar la regla de la cadena}
+
+\begin{enumerate}
+    \item Derivada de \( z \) con respecto a \( x \):
+
+    Aplicamos la regla de la cadena:
+    \begin{align*}
+        \frac{\partial z}{\partial x} = f'(g(x, y)) \cdot \frac{\partial g}{\partial x} = \cos(x^2 + y^2) \cdot 2x
+    \end{align*}
+
+    Entonces:
+    \begin{align*}
+        \frac{\partial z}{\partial x} = 2x \cos(x^2 + y^2)
+    \end{align*}
+
+    \item Derivada de \( z \) con respecto a \( y \):
+
+    De forma similar, aplicamos la regla de la cadena:
+    \begin{align*}
+        \frac{\partial z}{\partial y} = f'(g(x, y)) \cdot \frac{\partial g}{\partial y} = \cos(x^2 + y^2) \cdot 2y
+    \end{align*}
+
+    Entonces:
+    \begin{align*}
+        \frac{\partial z}{\partial y} = 2y \cos(x^2 + y^2)
+    \end{align*}
+\end{enumerate}
+
+Por lo tanto, las derivadas parciales de \( z \) son:
+\begin{align*}
+    \frac{\partial z}{\partial x} = 2x \cos(x^2 + y^2)
+\end{align*}
+\begin{align*}
+    \frac{\partial z}{\partial y} = 2y \cos(x^2 + y^2)
+\end{align*}
+
+\begin{ejem}
+  Supón que una función \( z \) depende de \( x \) e \( y \), donde \( x \) e \( y \) dependen de \( t \). Es decir, tenemos las siguientes relaciones:  
+\end{ejem}
+
+\begin{align*}
+    z = f(x, y), \quad x = g(t), \quad y = h(t)
+\end{align*}
+
+\textbf{} 
+\newline
+Usa la \textbf{regla de la cadena} para demostrar que la derivada de \( z \) respecto a \( t \) está dada por:
+
+\begin{align*}
+    \frac{dz}{dt} = \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt}
+\end{align*}
+
+\textbf{Solución}
+
+\textbf{} 
+\newline
+\textbf{Paso 1} 
+
+\textbf{} 
+\newline
+Sabemos que \( z = f(x(t), y(t)) \), donde \( x = g(t) \) y \( y = h(t) \), por lo que \( z \) es una función de \( t \) a través de \( x \) e \( y \).
+
+\textbf{} 
+\newline
+\textbf{Paso 2}
+
+\textbf{} 
+\newline
+Aplicando la \textbf{regla de la cadena} en su forma general para funciones de varias variables, tenemos que la derivada de \( z \) con respecto a \( t \) es la suma de las derivadas parciales de \( z \) con respecto a \( x \) e \( y \), multiplicadas por las derivadas de \( x \) e \( y \) con respecto a \( t \):
+
+\begin{align*}
+    \frac{dz}{dt} = \frac{\partial z}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial z}{\partial y} \cdot \frac{dy}{dt}
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf{Paso 3}
+
+\textbf{} 
+\newline
+Aquí, \(\frac{\partial z}{\partial x}\) representa la tasa de cambio de \( z \) con respecto a \( x \), mientras que \( \frac{dx}{dt} \) es la tasa de cambio de \( x \) con respecto a \( t \), y lo mismo ocurre para \( y \).
+
+
+
+
+\section{Derivada direccional}
+\begin{defi}[Derivada direccional]
+
+\textbf{}
+\newline
+    La derivada direccional es un concepto del cálculo multivariable que mide el cambio de una función en una dirección específica. Dada una función $f(x, y, z, \dots)$ en varias variables, la derivada direccional de $f$ en un punto $p$, en la dirección de un vector unitario $\mathbf{v}$, se define como la tasa de cambio de $f$ cuando se mueve infinitesimalmente en la dirección de $\mathbf{v}$.
+\end{defi}
+
+\begin{defi}[Gradiente]
+
+\textbf{}
+\newline
+    El gradiente es un concepto clave en el cálculo multivariable que generaliza la idea de la derivada a funciones de varias variables. Para una función escalar $f(x_1, x_2, \dots, x_n)$, el gradiente es un vector que indica la dirección y la tasa máxima de cambio de la función en un punto determinado. Se denota como $\nabla f$ o $\text{grad} \, f$ y se define como:
+
+        \[
+        \nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \dots, \frac{\partial f}{\partial x_n} \right)
+        \] 
+\end{defi}
+
+\textbf{}
+\newline
+\textbf{Gradientes de una funcion $f$ :}
+
+ \begin{itemize}
+     \item[i)] Suponga que $f$ es una funcion de dos variables $x$ y $y$ cuyas derivadas parciales $f_x$ y $f_y$, existen. Entonces el \textbf{gradiente de f} se define como
+     \[
+     \nabla f(x,y) = \frac{\partial f}{\partial x}\textbf{i}+\frac{\partial f}{\partial y}\textbf{j}.
+     \]
+     \item[ii)] suponga que $f$ es una funcion de tres variables $x$, $y$ y $z$ cuyas derivadas parciales $f_x$, $f_y$ y $f_z$ existen. Entonces el \textbf{gradiente de f} se define como 
+     \[
+     \nabla f(x,y,z) = \frac{\partial f}{\partial x}\textbf{i}+\frac{\partial f}{\partial y}\textbf{j}+\frac{\partial f}{\partial z}\textbf{z}
+     \]
+ \end{itemize}
+
+\begin{ejem}
+    Calcule el gradiente de la funcion dada.
+\end{ejem}
+
+ 
+\begin{align*}
+    f(x,y) = y - e^{-2x^2y}.
+\end{align*}
+
+\textbf{Solución:}
+\newline
+Para encontrar el gradiente \( \nabla f \), calculamos las derivadas parciales respecto a \( x \) y \( y \).
+
+\textbf{}
+\newline
+\textbf{Paso 1. Derivada parcial respecto a \( x \)}
+
+\begin{align*}
+    \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} \left( y - e^{-2x^2y} \right).
+\end{align*}
+Utilizando la regla de la cadena, obtenemos
+\begin{align*}
+    \frac{\partial f}{\partial x} = 0 - \frac{\partial}{\partial x} (e^{-2x^2y}) = -e^{-2x^2y} \cdot \frac{\partial}{\partial x} (-2x^2y).
+\end{align*}
+
+\begin{align*}
+    \frac{\partial}{\partial x} (-2x^2y) = -4xy,
+\end{align*}
+
+\begin{align*}
+    \frac{\partial f}{\partial x} = -e^{-2x^2y} \cdot (-4xy) = 4xye^{-2x^2y}.
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 2.Derivada parcial respecto a \( y \)}
+
+Ahora calculamos 
+\begin{align*}
+    \frac{\partial f}{\partial y} = \frac{\partial}{\partial y} \left( y - e^{-2x^2y} \right) = 1 - \frac{\partial}{\partial y} (e^{-2x^2y}).
+\end{align*}
+
+Aplicando la regla de la cadena, tenemos
+\begin{align*}
+    \frac{\partial}{\partial y} (e^{-2x^2y}) = e^{-2x^2y} \cdot (-2x^2).
+\end{align*}
+
+Entonces,
+\begin{align*}
+    \frac{\partial f}{\partial y} = 1 + 2x^2 e^{-2x^2y}.
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 3.Gradiente}
+
+Finalmente, el gradiente de  $f$ se expresa como
+\begin{align*}
+    \nabla f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right) = \left( 4xye^{-2x^2y}, 1 \textbf{i()}+ 2x^2 e^{-2x^2y}\textbf{(j)} \right).
+\end{align*}
+\begin{ejem}
+  si $f(x,y,z)$ = $In(x^2+y^2+z^2)$ encontrar su gradiente en el punto $(-4,3,5)$  
+\end{ejem}
+    
+
+\textbf{}
+\newline
+\textbf{Solución: }
+
+\textbf{}
+\newline
+\textbf{Paso 1. Derivadas parciales}
+
+Calculamos las derivadas parciales de \( f \):
+
+\textbf{}
+\newline
+\textbf{Derivada parcial respecto a \( x \)}
+\begin{align*}
+    \frac{\partial f}{\partial x} = \frac{1}{x^2 + y^2 + z^2} \cdot \frac{\partial}{\partial x}(x^2 + y^2 + z^2) = \frac{1}{x^2 + y^2 + z^2} \cdot (2x) = \frac{2x}{x^2 + y^2 + z^2}.
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Derivada parcial respecto a \( y \)}
+\begin{align*}
+    \frac{\partial f}{\partial y} = \frac{1}{x^2 + y^2 + z^2} \cdot \frac{\partial}{\partial y}(x^2 + y^2 + z^2) = \frac{1}{x^2 + y^2 + z^2} \cdot (2y) = \frac{2y}{x^2 + y^2 + z^2}.
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Derivada parcial respecto a \( z \)}
+\begin{align*}
+    \frac{\partial f}{\partial z} = \frac{1}{x^2 + y^2 + z^2} \cdot \frac{\partial}{\partial z}(x^2 + y^2 + z^2) = \frac{1}{x^2 + y^2 + z^2} \cdot (2z) = \frac{2z}{x^2 + y^2 + z^2}.
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 2. Gradiente}
+El gradiente \( \nabla f \) es:
+\begin{align*}
+    \nabla f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right) = \left( \frac{2x}{x^2 + y^2 + z^2}, \frac{2y}{x^2 + y^2 + z^2}, \frac{2z}{x^2 + y^2 + z^2} \right).
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 3. Evaluación en el punto \((-4, 3, 5)\)}
+
+Calculamos \( x^2 + y^2 + z^2 \) en el punto:
+\begin{align*}
+    (-4)^2 + 3^2 + 5^2 = 16 + 9 + 25 = 50.
+\end{align*}
+
+Ahora sustituimos \( x = -4 \), \( y = 3 \), y \( z = 5 \) en el gradiente:
+
+\begin{align*}
+\frac{\partial f}{\partial x} &= \frac{2(-4)}{50} = -\frac{8}{50} = -\frac{4}{25}, \\
+\frac{\partial f}{\partial y} &= \frac{2(3)}{50} = \frac{6}{50} = \frac{3}{25}, \\
+\frac{\partial f}{\partial z} &= \frac{2(5)}{50} = \frac{10}{50} = \frac{1}{5}.
+\end{align*}
+
+Por lo tanto, el gradiente en el punto \((-4, 3, 5)\) es 
+\begin{align}
+    \nabla f(-4, 3, 5) = \left( -\frac{4}{25}, \frac{3}{25}, \frac{1}{5} \right).
+\end{align}
+\begin{defi}[Derivada direccional]
+
+\textbf{}
+\newline
+La derivada direccional de una funcion $z = f(x,y)$ en $(x,y)$ en la direccion del vector unitario $u = Cos\theta$\textbf{i} + $Sen \theta$\textbf{j} está dada por
+\end{defi}
+\begin{align*}
+    D_u f(x, y) = \lim_{h \to 0} \frac{f(x + h \cos u, y + h \sin u) - f(x, y)}{h}
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Teorema: }
+Si \( f(x, y) \) es una función diferenciable respecto de \( x \) y \( y \), y \( \mathbf{u} = \cos \theta \, \mathbf{i} + \sin \theta \, \mathbf{j} \) es un vector unitario, entonces 
+\begin{align*}
+    D_{\mathbf{u}} f(x, y) = \nabla f(x,y)\cdot u
+\end{align*}
+
+
+\begin{ejem}
+    Dada la función \( z = e^x \sin(y) \), el punto \( (0, \frac{\pi}{3}) \), y el vector \( \mathbf{v} = \langle -6, 8 \rangle \), queremos calcular la derivada direccional de \( z \) en la dirección de \( \mathbf{v} \) en el punto dado.
+\end{ejem}
+    
+
+
+\textbf{Paso 1: Derivadas parciales}
+
+\textbf{}
+\newline
+Primero, calculamos las derivadas parciales de la función \( z = e^x \sin(y) \):
+
+- Derivada parcial respecto de \( x \):
+\begin{align*}
+    \frac{\partial z}{\partial x} = \frac{\partial}{\partial x} \left( e^x \sin(y) \right) = e^x \sin(y)
+\end{align*}
+
+- Derivada parcial respecto de \( y \):
+\begin{align*}
+    \frac{\partial z}{\partial y} = \frac{\partial}{\partial y} \left( e^x \sin(y) \right) = e^x \cos(y)
+\end{align*}
+
+\textbf{Paso 2: Normalización del vector \( \mathbf{v} \)}
+
+\textbf{}
+\newline
+El vector \( \mathbf{v} = \langle -6, 8 \rangle \) no es un vector unitario, por lo que debemos normalizarlo. Primero, calculamos su magnitud:
+
+\begin{align*}
+    |\mathbf{v}| = \sqrt{(-6)^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = 10
+\end{align*}
+
+El vector unitario \( \hat{\mathbf{v}} \) en la dirección de \( \mathbf{v} \) es:
+
+\begin{align*}
+    \hat{\mathbf{v}} = \left\langle \frac{-6}{10}, \frac{8}{10} \right\rangle = \langle -0.6, 0.8 \rangle
+\end{align*}
+
+\textbf{Paso 3: Evaluación de las derivadas parciales en el punto \( (0, \frac{\pi}{3}) \)}
+
+\textbf{}
+\newline
+Ahora evaluamos las derivadas parciales en el punto \( (x, y) = (0, \frac{\pi}{3}) \):
+
+- Evaluamos \( \frac{\partial z}{\partial x} \) en \( (0, \frac{\pi}{3}) \):
+\begin{align*}
+    \frac{\partial z}{\partial x}(0, \frac{\pi}{3}) = e^0 \sin\left( \frac{\pi}{3} \right) = 1 \cdot \frac{\sqrt{3}}{2} = \frac{\sqrt{3}}{2}
+\end{align*}
+
+- Evaluamos \( \frac{\partial z}{\partial y} \) en \( (0, \frac{\pi}{3}) \):
+\begin{align*}
+    \frac{\partial z}{\partial y}(0, \frac{\pi}{3}) = e^0 \cos\left( \frac{\pi}{3} \right) = 1 \cdot \frac{1}{2} = \frac{1}{2}
+\end{align*}
+
+\textbf{Paso 4: Cálculo de la derivada direccional}
+
+\textbf{}
+\newline
+La derivada direccional en la dirección del vector \( \mathbf{v} \) se calcula como el producto punto del gradiente de \( z \) y el vector unitario \( \hat{\mathbf{v}} \):
+
+\begin{align*}
+    D_{\mathbf{v}} z(0, \frac{\pi}{3}) = \nabla z(0, \frac{\pi}{3}) \cdot \hat{\mathbf{v}}
+\end{align*}
+
+El gradiente de \( z \) es el vector de las derivadas parciales:
+
+\begin{align*}
+    \nabla z(0, \frac{\pi}{3}) = \left\langle \frac{\partial z}{\partial x}(0, \frac{\pi}{3}), \frac{\partial z}{\partial y}(0, \frac{\pi}{3}) \right\rangle = \left\langle \frac{\sqrt{3}}{2}, \frac{1}{2} \right\rangle
+\end{align*}
+
+El producto punto del gradiente \( \nabla z(0, \frac{\pi}{3}) \) con el vector unitario \( \hat{\mathbf{v}} \) es:
+
+\begin{align*}
+    D_{\mathbf{v}} z(0, \frac{\pi}{3}) = \left( \frac{\sqrt{3}}{2} \right)(-0.6) + \left( \frac{1}{2} \right)(0.8)
+\end{align*}
+
+Multiplicamos los valores:
+
+\begin{align*}
+    D_{\mathbf{v}} z(0, \frac{\pi}{3}) = -0.3\sqrt{3} + 0.4
+\end{align*}
+
+\textbf{Paso 5: Resultado final}
+
+\textbf{}
+\newline
+Por lo tanto, la derivada direccional de \( z = e^x \sin(y) \) en el punto \( (0, \frac{\pi}{3}) \) en la dirección del vector \( \mathbf{v} = \langle -6, 8 \rangle \) es:
+
+\begin{align*}
+    D_{\mathbf{v}} z(0, \frac{\pi}{3}) = -0.3\sqrt{3} + 0.4
+\end{align*}
+
+\begin{ejem}
+    Dada la función \( z = p^4 - p^2 q^3 \), el punto \( (p, q) = (2, 1) \), y el vector \( \mathbf{v} = \mathbf{i} + 3\mathbf{j} \), queremos calcular la derivada direccional de \( z \) en la dirección de \( \mathbf{v} \) en el punto dado.
+\end{ejem}
+
+
+\textbf{}
+\newline
+\textbf{Paso 1: Derivadas parciales}
+
+\textbf{}
+\newline
+Primero, calculamos las derivadas parciales de la función \( z = p^4 - p^2q^3 \):
+
+- Derivada parcial respecto de \( p \):
+\begin{align*}
+    \frac{\partial z}{\partial p} = \frac{\partial}{\partial p} \left( p^4 - p^2q^3 \right) = 4p^3 - 2p q^3
+\end{align*}
+
+- Derivada parcial respecto de \( q \):
+\begin{align*}
+    \frac{\partial z}{\partial q} = \frac{\partial}{\partial q} \left( p^4 - p^2 q^3 \right) = -3p^2 q^2
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 2: Normalización del vector \( \mathbf{v} \)}
+
+\textbf{}
+\newline
+El vector \( \mathbf{v} = \mathbf{i} + 3\mathbf{j} \) no es un vector unitario, por lo que debemos normalizarlo. Primero, calculamos su magnitud:
+
+\[
+|\mathbf{v}| = \sqrt{1^2 + 3^2} = \sqrt{1 + 9} = \sqrt{10}
+\]
+
+El vector unitario \( \hat{\mathbf{v}} \) en la dirección de \( \mathbf{v} \) es:
+
+\[
+\hat{\mathbf{v}} = \left\langle \frac{1}{\sqrt{10}}, \frac{3}{\sqrt{10}} \right\rangle
+\]
+
+\textbf{}
+\newline
+\textbf{Paso 3: Evaluación de las derivadas parciales en el punto \( (2, 1) \)}
+
+\textbf{}
+\newline
+Ahora evaluamos las derivadas parciales en el punto \( (p, q) = (2, 1) \):
+
+- Evaluamos \( \frac{\partial z}{\partial p} \) en \( (2, 1) \):
+\[
+\frac{\partial z}{\partial p}(2, 1) = 4(2)^3 - 2(2)(1)^3 = 32 - 4 = 28
+\]
+
+- Evaluamos \( \frac{\partial z}{\partial q} \) en \( (2, 1) \):
+\[
+\frac{\partial z}{\partial q}(2, 1) = -3(2)^2(1)^2 = -3(4) = -12
+\]
+
+\textbf{}
+\newline
+\textbf{Paso 4: Cálculo de la derivada direccional}
+
+\textbf{}
+\newline
+La derivada direccional en la dirección del vector \( \mathbf{v} \) se calcula como el producto punto del gradiente de \( z \) y el vector unitario \( \hat{\mathbf{v}} \):
+
+\[
+D_{\mathbf{v}} z(2, 1) = \nabla z(2, 1) \cdot \hat{\mathbf{v}} = \frac{\partial z}{\partial p}(2, 1) \frac{1}{\sqrt{10}} + \frac{\partial z}{\partial q}(2, 1) \frac{3}{\sqrt{10}}
+\]
+
+Sustituyendo los valores de las derivadas parciales:
+
+\[
+D_{\mathbf{v}} z(2, 1) = 28 \cdot \frac{1}{\sqrt{10}} + (-12) \cdot \frac{3}{\sqrt{10}} = \frac{28}{\sqrt{10}} - \frac{36}{\sqrt{10}} = \frac{-8}{\sqrt{10}} = -\frac{8\sqrt{10}}{10} = -\frac{4\sqrt{10}}{5}
+\]
+
+\textbf{}
+\newline
+\textbf{Paso 5: Resultado final}
+
+\textbf{}
+\newline
+Por lo tanto, la derivada direccional de \( z = p^4 - p^2q^3 \) en el punto \( (2, 1) \) en la dirección del vector \( \mathbf{v} = \mathbf{i} + 3\mathbf{j} \) es:
+
+\[
+D_{\mathbf{v}} z(2, 1) = -\frac{4\sqrt{10}}{5}
+\]
+\section{Planos tangentes y rectas normales}
+\begin{defi}[Planos tangentes]
+
+\textbf{}
+\newline
+    En una superficie tridimensional, el \textbf{plano tangente} es el equivalente a la línea tangente en una curva. Este plano toca la superficie en un solo punto. Para encontrar su ecuación, utilizamos el \textbf{gradiente}, que nos indica la dirección de mayor cambio de una función.
+\end{defi}
+
+\begin{defi}
+    Sea un punto sobre la gráfica de la superficie de nivel donde \( \nabla F(x_0, y_0, z_0) \neq 0 \). El plano tangente en \( P \) es aquel plano que pasa por \( P \) y que es perpendicular a \( \nabla F(x_0, y_0, z_0) \).
+\end{defi}
+
+    
+
+ \begin{teo} Sea un punto sobre la gráfica de \( F(x, y, z) \), donde \( \nabla F \neq 0 \). Entonces, una ecuación del plano tangente en \( P \) es 
+ 
+    \begin{align*}
+          F_x(x_0, y_0, z_0)(x - x_0) + F_y(x_0, y_0, z_0)(y - y_0) + F_z(x_0, y_0, z_0)(z - z_0) = 0.
+    \end{align*}
+
+    \end{teo}
+    
+ Al realizar ejercicios de planos tangentes y rectas normales, queremos  reforzar la comprensión teórica y  proporcionar herramientas prácticas para resolver problemas en un contexto tridimensional
+     
+\begin{ejem}
+\textbf{}
+\newline
+ Dada la función \( z = x^2 - y^2 \), el punto \( (1, 2) \), y el vector \( \mathbf{u} = 4\mathbf{i} + 3\mathbf{j} \), procedemos a calcular la derivada direccional y la ecuación del plano tangente.
+\end{ejem}
+
+\textbf{}
+\newline
+\textbf{Paso 1: Calcular las derivadas parciales}
+
+\textbf{}
+\newline
+Cálculamos las derivadas parciales de la función:
+
+\begin{align*}
+\frac{\partial z}{\partial x} &= 2x, \\
+\frac{\partial z}{\partial y} &= -2y.
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 2: Evaluar las derivadas parciales en el punto \( (1, 2) \)}
+
+\textbf{}
+\newline
+Evaluamos las derivadas parciales en el punto \( (1, 2) \):
+
+\begin{align*}
+\frac{\partial z}{\partial x}(1, 2) &= 2(1) = 2, \\
+\frac{\partial z}{\partial y}(1, 2) &= -2(2) = -4.
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 3: Calcular el gradiente}
+
+\textbf{}
+\newline
+El gradiente en el punto \( (1, 2) \) es:
+\begin{align*}
+    \nabla z(1, 2) = \langle 2, -4 \rangle.
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 4: Normalizar el vector \( \mathbf{u} \)}
+
+\textbf{}
+\newline
+Calculamos la magnitud del vector \( \mathbf{u} \):
+\begin{align*}
+    |\mathbf{u}| = \sqrt{4^2 + 3^2} = \sqrt{25} = 5.
+\end{align*}
+El vector unitario \( \hat{\mathbf{u}} \) es:
+\begin{align*}
+    \hat{\mathbf{u}} = \left\langle \frac{4}{5}, \frac{3}{5} \right\rangle.
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 5: Calcular la derivada direccional}
+
+\textbf{}
+\newline
+La derivada direccional es:
+\begin{align*}
+    D_{\mathbf{u}} z(1, 2) = \nabla z(1, 2) \cdot \hat{\mathbf{u}} = \langle 2, -4 \rangle \cdot \left\langle \frac{4}{5}, \frac{3}{5} \right\rangle.
+\end{align*}
+Calculamos el producto punto:
+\begin{align*}
+    D_{\mathbf{u}} z(1, 2) = 2 \cdot \frac{4}{5} + (-4) \cdot \frac{3}{5} = \frac{8}{5} - \frac{12}{5} = -\frac{4}{5}.
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 6: Encontrar la ecuación del plano tangente}
+
+\textbf{}
+\newline
+La ecuación del plano tangente es:
+\begin{align*}
+    z - z_0 = \frac{\partial z}{\partial x}(x_0, y_0)(x - x_0) + \frac{\partial z}{\partial y}(x_0, y_0)(y - y_0).
+\end{align*}
+ Con \( (x_0, y_0) = (1, 2) \) y \( z_0 = 1^2 - 2^2 = -3 \):
+\begin{align*}
+    z + 3 = 2(x - 1) - 4(y - 2).
+\end{align*}
+Desarrollando la ecuación, obtenemos:
+\begin{align*}
+    z = 2x - 4y + 3.
+\end{align*}
+\textbf{Resultados}
+\textbf{}
+\newline
+1. Derivada direccional:
+\begin{align*}
+    D_{\mathbf{u}} z(1, 2) = -\frac{4}{5}.
+\end{align*}
+
+2. Ecuación del plano tangente:
+\begin{align*}
+    z = 2x - 4y + 3.
+\end{align*}
+\section*{Grafica}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{CAPITULOS/imagenss/Plano1.png}
+        \caption{Plano $z = x^2 - y^2$ }
+        \label{fig:enter-label}
+    \end{figure}
+
+\begin{ejem}
+    Dada la función \( z = f(r, s) = \tan^{-1}(rs) \), vamos a calcular la derivada direccional en el punto \( (1, 2) \) y en la dirección del vector \( \mathbf{v} = 5\mathbf{i} + 10\mathbf{j} \).
+\end{ejem}
+
+
+
+\textbf{}
+\newline
+\textbf{Paso 1: Cálculo de las derivadas parciales}
+
+\textbf{}
+\newline
+Calculamos las derivadas parciales de \( f \):
+\begin{align*}
+    \frac{\partial f}{\partial r} = \frac{s}{1 + (rs)^2}
+\end{align*}
+\begin{align*}
+    \frac{\partial f}{\partial s} = \frac{r}{1 + (rs)^2}
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 2: Evaluación de las derivadas parciales en el punto \( (1, 2) \)}
+
+\textbf{}
+\newline
+Evaluamos las derivadas parciales:
+\begin{align*}
+    \frac{\partial f}{\partial r}\bigg|_{(1, 2)} = \frac{2}{1 + (1 \cdot 2)^2} = \frac{2}{5}
+\end{align*}
+\begin{align*}
+    \frac{\partial f}{\partial s}\bigg|_{(1, 2)} = \frac{1}{1 + (1 \cdot 2)^2} = \frac{1}{5}
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 3: Gradiente de la función}
+
+\textbf{}
+\newline
+El gradiente \( \nabla f \) en el punto \( (1, 2) \) es:
+\begin{align*}
+    \nabla f(1, 2) = \left( \frac{2}{5}, \frac{1}{5} \right)
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 4: Normalización del vector \( \mathbf{v} \)}
+
+\textbf{}
+\newline
+El vector \( \mathbf{v} = 5\mathbf{i} + 10\mathbf{j} \):
+\begin{align*}
+    \|\mathbf{v}\| = \sqrt{5^2 + 10^2} = \sqrt{125} = 5\sqrt{5}
+\end{align*}
+
+\textbf{}
+\newline
+El vector unitario en la dirección de \( \mathbf{v} \) es:
+\begin{align*}
+    \mathbf{u} = \left( \frac{5}{5\sqrt{5}}, \frac{10}{5\sqrt{5}} \right) = \left( \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}} \right)
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 5: Derivada direccional}
+
+\textbf{}
+\newline
+La derivada direccional \( D_{\mathbf{u}} f \) es:
+\begin{align*}
+    D_{\mathbf{u}} f = \nabla f(1, 2) \cdot \mathbf{u} = \left( \frac{2}{5}, \frac{1}{5} \right) \cdot \left( \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}} \right)
+\end{align*}
+
+\textbf{}
+\newline
+Calculando el producto punto:
+\begin{align*}
+    D_{\mathbf{u}} f = \frac{2}{5} \cdot \frac{1}{\sqrt{5}} + \frac{1}{5} \cdot \frac{2}{\sqrt{5}} = \frac{4\sqrt{5}}{25}
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 6: Cálculo del valor de \( z \) en el punto dado}
+
+\textbf{}
+\newline
+Evaluamos \( f \) en \( (1, 2) \):
+\begin{align*}
+    f(1, 2) = \tan^{-1}(1 \cdot 2) = \tan^{-1}(2)
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 7: Ecuación del plano tangente}
+
+\textbf{}
+\newline
+La ecuación del plano tangente es:
+\begin{align*}
+    z - f(r_0, s_0) = \frac{\partial f}{\partial r}\bigg|{(1, 2)}(r - 1) + \frac{\partial f}{\partial s}\bigg|{(1, 2)}(s - 2)
+\end{align*}
+
+\textbf{}
+\newline
+Sustituyendo los valores:
+\begin{align*}
+    z - \tan^{-1}(2) = \frac{2}{5}(r - 1) + \frac{1}{5}(s - 2)
+\end{align*}
+
+\textbf{}
+\newline
+Multiplicando y reorganizando:
+\begin{align*}
+    z = \tan^{-1}(2) - \frac{4}{5} + \frac{2}{5}r + \frac{1}{5}s
+\end{align*}
+\section*{Grafica}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{CAPITULOS/imagenss/Plano2.png}
+    \caption{$Plano z = f(r, s) = \tan^{-1}(rs)$}
+    \label{fig:enter-label}
+\end{figure}
+\begin{ejem}
+     Dada la función \( f(x, y, z) = \sqrt{xyz} \), el punto \( P(3, 2, 6) \) y el vector \( \mathbf{v} = \langle -1, -2, 2 \rangle \), se pide calcular:
+
+\begin{itemize}
+    \item La derivada direccional de \( f \) en la dirección del vector \( \mathbf{v} \) en el punto dado.
+    \item La ecuación del plano tangente en el punto dado.
+\end{itemize}
+\end{ejem}
+
+\textbf{}
+\newline
+\textbf{1. Derivada Direccional}
+
+\textbf{}
+\newline
+La derivada direccional está dada por la fórmula:
+
+\begin{align*}
+    D_{\mathbf{v}} f(x_0, y_0, z_0) = \nabla f(x_0, y_0, z_0) \cdot \frac{\mathbf{v}}{|\mathbf{v}|}
+\end{align*}
+
+Donde:
+\begin{itemize}
+    \item \( \nabla f(x, y, z) \) es el gradiente de la función \( f \) en el punto \( (x_0, y_0, z_0) \).
+    \item \( \frac{\mathbf{v}}{|\mathbf{v}|} \) es el vector de dirección unitario, es decir, el vector \( \mathbf{v} \) normalizado.
+\end{itemize}
+
+\textbf{}
+\newline
+\textbf{Paso 1: Calcular el gradiente de \( f(x, y, z) \)}
+
+\textbf{}
+\newline
+La función dada es \( f(x, y, z) = \sqrt{xyz} \), y el gradiente de una función de varias variables es el vector que contiene las derivadas parciales de la función con respecto a cada variable. Esto es:
+
+\begin{align*}
+    \nabla f(x, y, z) = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right)
+\end{align*}
+
+Vamos a calcular las derivadas parciales de \( f(x, y, z) \).
+
+\textbf{}
+\newline
+\textbf{Derivada parcial con respecto a \( x \):}
+
+\textbf{}
+\newline
+\begin{align*}
+    \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} \left( \sqrt{xyz} \right) = \frac{1}{2 \sqrt{xyz}} \cdot yz = \frac{yz}{2 \sqrt{xyz}}
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Derivada parcial con respecto a \( y \):}
+
+\textbf{}
+\newline
+\begin{align*}
+    \frac{\partial f}{\partial y} = \frac{\partial}{\partial y} \left( \sqrt{xyz} \right) = \frac{1}{2 \sqrt{xyz}} \cdot xz = \frac{xz}{2 \sqrt{xyz}}
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Derivada parcial con respecto a \( z \):}
+
+\textbf{}
+\newline
+\begin{align*}
+    \frac{\partial f}{\partial z} = \frac{\partial}{\partial z} \left( \sqrt{xyz} \right) = \frac{1}{2 \sqrt{xyz}} \cdot xy = \frac{xy}{2 \sqrt{xyz}}
+\end{align*}
+
+Por lo tanto, el gradiente completo es:
+
+\begin{align*}
+    \nabla f(x, y, z) = \left( \frac{yz}{2 \sqrt{xyz}}, \frac{xz}{2 \sqrt{xyz}}, \frac{xy}{2 \sqrt{xyz}} \right)
+\end{align*}
+
+\textbf{}
+\newline
+\textbf{Paso 2: Evaluar el gradiente en el punto \( (3, 2, 6) \)}
+
+\textbf{}
+\newline
+Ahora sustituimos \( x = 3 \), \( y = 2 \), y \( z = 6 \) en el gradiente.
+
+Primero, calculamos \( \sqrt{xyz} \) en el punto \( (3, 2, 6) \):
+
+\begin{align*}
+    \sqrt{xyz} = \sqrt{3 \cdot 2 \cdot 6} = \sqrt{36} = 6
+\end{align*}
+
+\textbf{}
+\newline
+Luego sustituimos este valor en las derivadas parciales:
+
+\begin{align*}
+    \nabla f(3, 2, 6) = \left( \frac{2 \cdot 6}{2 \cdot 6}, \frac{3 \cdot 6}{2 \cdot 6}, \frac{3 \cdot 2}{2 \cdot 6} \right)
+\end{align*}
+
+\textbf{}
+\newline
+Simplificando cada componente:
+
+\[
+\nabla f(3, 2, 6) = \left( \frac{12}{12}, \frac{18}{12}, \frac{6}{12} \right) = \left( 1, \frac{3}{2}, \frac{1}{2} \right)
+\]
+
+\textbf{}
+\newline
+Así que el gradiente en \( (3, 2, 6) \) es \( \nabla f(3, 2, 6) = (1, \frac{3}{2}, \frac{1}{2}) \).
+
+\textbf{}
+\newline
+\textbf{Paso 3: Normalizar el vector \( \mathbf{v} \)} 
+
+\textbf{}
+\newline
+El vector dado es \( \mathbf{v} = \langle -1, -2, 2 \rangle \). Para calcular el vector unitario en la dirección de \( \mathbf{v} \), primero calculamos su norma (longitud):
+
+\[
+|\mathbf{v}| = \sqrt{(-1)^2 + (-2)^2 + 2^2} = \sqrt{1 + 4 + 4} = \sqrt{9} = 3
+\]
+
+Ahora dividimos cada componente de \( \mathbf{v} \) por su norma para obtener el vector unitario \( \hat{\mathbf{v}} \):
+
+\[
+\hat{\mathbf{v}} = \frac{1}{3} \langle -1, -2, 2 \rangle = \left( -\frac{1}{3}, -\frac{2}{3}, \frac{2}{3} \right)
+\]
+
+\textbf{}
+\newline
+\textbf{Paso 4: Calcular el producto punto para la derivada direccional} 
+
+\textbf{}
+\newline
+La derivada direccional es el producto punto entre el gradiente \( \nabla f(3, 2, 6) = (1, \frac{3}{2}, \frac{1}{2}) \) y el vector unitario \( \hat{\mathbf{v}} = \left( -\frac{1}{3}, -\frac{2}{3}, \frac{2}{3} \right) \).
+
+El producto punto se calcula como:
+
+\[
+D_{\mathbf{v}} f(3, 2, 6) = 1 \cdot \left( -\frac{1}{3} \right) + \frac{3}{2} \cdot \left( -\frac{2}{3} \right) + \frac{1}{2} \cdot \left( \frac{2}{3} \right)
+\]
+
+Realizando las multiplicaciones:
+
+\[
+D_{\mathbf{v}} f(3, 2, 6) = -\frac{1}{3} - \frac{6}{6} + \frac{2}{6}
+\]
+
+Simplificamos las fracciones:
+
+\[
+D_{\mathbf{v}} f(3, 2, 6) = -\frac{1}{3} - 1 + \frac{1}{3}
+\]
+
+\[
+D_{\mathbf{v}} f(3, 2, 6) = -1
+\]
+
+Por lo tanto, la derivada direccional de \( f \) en la dirección de \( \mathbf{v} \) es \( -1 \).
+
+\textbf{}
+\newline
+\textbf{2. Ecuación del Plano Tangente}
+
+\textbf{}
+\newline
+Las derivadas parciales de la función son:
+
+\[
+f_x(x, y, z) = \frac{yz}{2 \sqrt{xyz}}, \quad f_y(x, y, z) = \frac{xz}{2 \sqrt{xyz}}, \quad f_z(x, y, z) = \frac{xy}{2 \sqrt{xyz}}
+\]
+
+Evaluamos estas derivadas en el punto \( (3, 2, 6) \):
+
+1. Calculemos \( \sqrt{xyz} \) en \( (3, 2, 6) \):
+
+\[
+\sqrt{xyz} = \sqrt{3 \cdot 2 \cdot 6} = \sqrt{36} = 6
+\]
+
+2. Sustituyendo en las derivadas parciales:
+
+\[
+f_x(3, 2, 6) = \frac{2 \cdot 6}{2 \cdot 6} = 1
+\]
+
+\[
+f_y(3, 2, 6) = \frac{3 \cdot 6}{2 \cdot 6} = \frac{3}{2}
+\]
+
+\[
+f_z(3, 2, 6) = \frac{3 \cdot 2}{2 \cdot 6} = \frac{1}{2}
+\]
+
+Entonces, tenemos:
+
+\[
+f_x(3, 2, 6) = 1, \quad f_y(3, 2, 6) = \frac{3}{2}, \quad z_0 = 6
+\]
+
+\textbf{}
+\newline
+\textbf{Paso 2: Sustituir en la fórmula del plano tangente}
+
+\textbf{}
+\newline
+La ecuación del plano tangente se expresa como:
+
+\[
+z - z_0 = f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0)
+\]
+
+Sustituyendo los valores en \( (3, 2, 6) \):
+
+\[
+z - 6 = 1(x - 3) + \frac{3}{2}(y - 2)
+\]
+
+\textbf{}
+\newline
+\textbf{Paso 3: Simplificar la ecuación}
+\newline
+Expandiendo la ecuación:
+
+\textbf{}
+\newline
+\begin{align*}
+    z - 6 = (x - 3) + \frac{3}{2}(y - 2)
+\end{align*}
+
+Desarrollamos:
+
+\begin{align*}
+    z - 6 = x - 3 + \frac{3}{2}y - 3
+\end{align*}
+
+Combinando términos:
+
+\begin{align*}
+    z - 6 = x + \frac{3}{2}y - 6
+\end{align*}
+
+Finalmente, la ecuación del plano tangente es:
+
+\begin{align*}
+    z = x + \frac{3}{2}y
+\end{align*}
+\section*{Grafica}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{CAPITULOS/imagenss/Plano3.png}
+    \caption{Plano $f(x, y, z) = \sqrt{xyz}$  }
+    \label{fig:enter-label}
+\end{figure}
+
+\section{Extremos de funciones Multivariables}
+\begin{defi}[Extremos relativos]
+\end{defi}
+\begin{itemize}
+    \item Un número \( f(a, b) \) es un \textbf{máximo relativo} de una función \( f \) si:
+    \begin{align*}
+        f(a, b) \geq f(x, y) \quad \text{para todo } (x, y) \text{ en algún disco abierto que contenga a } (a, b).
+    \end{align*}
+
+    \item Un número \( f(a, b) \) es un \textbf{mínimo relativo} de una función \( f \) si:
+    \begin{align*}
+        f(a, b) \leq f(x, y) \quad \text{para todo } (x, y) \text{ en algún disco abierto que contenga a } (a, b).
+    \end{align*}
+    
+\end{itemize}
+\begin{teo}  (Extremos relativos) :
+    Si una función $z = f(x,y) $tiene un extremo relativo en el punto $(a,b)$ y si las primeras derivadas parciales existen en este punto, entonces
+    $f_x(a, b) = 0 \quad \text{y} \quad f_y(a, b) = 0.$
+
+\end{teo}
+
+\begin{defi}[Punto Critico]
+\textbf{} 
+\newline
+    Un \textbf{Punto Critico} de una funcion $z = f(x,y)$ es un punto $(a,b)$ en el dominio de f para el cual $f_x(a,b) = 0$ y  $f_y(a,b) = 0$, o si una de sus derivadas parciales no existen en el punto.
+
+\end{defi}
+    Consideremos la función polinómica de dos variables:
+
+\begin{align*}
+    f(x, y) = x^3 + 3xy^2 - 9x - 3y^2
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf{Paso 1: Calcular las derivadas parciales}
+
+\textbf{} 
+\newline
+Primero, encontramos las derivadas parciales de \( f \):
+
+\textbf{} 
+\newline
+\textbf{Derivada parcial con respecto a \( x \)}
+
+\begin{align*}
+    f_x(x, y) = \frac{\partial}{\partial x}(x^3 + 3xy^2 - 9x - 3y^2) = 3x^2 + 3y^2 - 9
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf{Derivada parcial con respecto a \( y \)}
+
+\textbf{} 
+\newline
+\begin{align*}
+    f_y(x, y) = \frac{\partial}{\partial y}(x^3 + 3xy^2 - 9x - 3y^2) = 6xy - 6y
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf{Paso 2: Igualar las derivadas a cero}
+
+\textbf{} 
+\newline
+Para encontrar los puntos críticos, igualamos las derivadas parciales a cero:
+
+\textbf{} 
+\newline
+\textbf{Para \( f_x(x, y) = 0 \)}
+
+\textbf{} 
+\newline
+\begin{align*}
+    3x^2 + 3y^2 - 9 = 0 \Rightarrow x^2 + y^2 = 3 \tag{1}
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf{Para \( f_y(x, y) = 0 \)}
+
+\textbf{} 
+\newline
+\begin{align*}
+    6xy - 6y = 0 \Rightarrow 6y(x - 1) = 0
+\end{align*}
+
+Esto nos da dos casos:
+
+\begin{align*}
+    y = 0 \quad \text{o} \quad x = 1 \tag{2}
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf{Paso 3: Resolver el sistema de ecuaciones}
+
+\textbf{} 
+\newline
+Resolviendo el sistema de ecuaciones formado por (1) y (2):
+
+\textbf{} 
+\newline
+
+\textbf{Caso 1: \( y = 0 \)}
+
+Sustituyendo \( y = 0 \) en (1):
+
+\begin{align*}
+    x^2 + 0^2 = 3 \Rightarrow x^2 = 3 \Rightarrow x = \sqrt{3} \quad \text{o} \quad x = -\sqrt{3}
+\end{align*}
+
+Los puntos críticos son:
+
+\begin{align*}
+    (\sqrt{3}, 0) \quad \text{y} \quad (-\sqrt{3}, 0)
+\end{align*}
+
+\textbf{Caso 2: \( x = 1 \)}
+
+Sustituyendo \( x = 1 \) en (1):
+
+\begin{align*}
+    1^2 + y^2 = 3 \Rightarrow 1 + y^2 = 3 \Rightarrow y^2 = 2 \Rightarrow y = \sqrt{2} \quad \text{o} \quad y = -\sqrt{2}
+\end{align*}
+
+Los puntos críticos son:
+
+\begin{align*}
+    (1, \sqrt{2}) \quad \text{y} \quad (1, -\sqrt{2})
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf{Paso 4: Resumen de los puntos críticos}
+
+\textbf{} 
+\newline
+Los puntos críticos de la función \( f(x, y) = x^3 + 3xy^2 - 9x - 3y^2 \) son:
+
+\begin{align*}
+    (\sqrt{3}, 0), \quad (-\sqrt{3}, 0), \quad (1, \sqrt{2}), \quad (1, -\sqrt{2})
+\end{align*}
+
+\textbf{Teorema } \textbf{Prueba de las segundas derivadas parciales: }
+\newline
+    Sea \( (a, b) \) un punto crítico de \( z = f(x, y) \) y suponga que \( f_{xx}, f_{xy} \) y \( f_{yy} \) son continuas en un disco centrado en \( (a, b) \). Considere que
+    \begin{align*}
+         D(x, y) = f_{xx}(x, y)f_{yy}(x, y) - [f_{xy}(x, y)]^2.
+    \end{align*}
+    
+    \begin{itemize}
+        \item[i)] Si \( D(a, b) > 0 \) y \( f_{xx}(a, b) > 0 \), entonces \( f(a, b) \) es un mínimo relativo.
+        \item[ii)] Si \( D(a, b) > 0 \) y \( f_{xx}(a, b) < 0 \), entonces \( f(a, b) \) es un máximo relativo.
+        \item[iii)] Si \( D(a, b) < 0 \), entonces \( (a, b) \) no es un extremo relativo.
+        \item[iv)] Si \( D(a, b) = 0 \), entonces la prueba no es concluyente.
+    \end{itemize}
+
+\begin{ejem}
+Al realizar ejercicios enfocados en este tema, buscamos desarrollar una comprensión sólida de cómo identificar y clasificar máximos, mínimos y puntos de silla en el contexto de funciones que se representan en un espacio tridimensional. 
+
+    Consideremos la función:
+\begin{align*}
+    f(x, y) = x^2 + y^2 - 4x - 6y
+\end{align*}
+    
+\end{ejem}
+
+\textbf{} 
+\newline
+\textbf{Paso 1: Encontrar los puntos críticos}
+
+\textbf{} 
+\newline
+Calculamos las derivadas parciales de \( f \):
+
+\textbf{} 
+\newline
+\textbf{Derivada parcial con respecto a \( x \)}
+
+\textbf{} 
+\newline
+\begin{align*}
+    f_x(x, y) = \frac{\partial f}{\partial x} = 2x - 4
+\end{align*}
+
+\textbf{} 
+\newline
+\subsubsection*{Derivada parcial con respecto a \( y \)}
+
+\textbf{} 
+\newline
+\[
+f_y(x, y) = \frac{\partial f}{\partial y} = 2y - 6
+\]
+
+Igualamos las derivadas a cero para encontrar los puntos críticos:
+
+\[
+2x - 4 = 0 \quad \Rightarrow \quad x = 2 \tag{1}
+\]
+
+\[
+2y - 6 = 0 \quad \Rightarrow \quad y = 3 \tag{2}
+\]
+
+El único punto crítico es:
+
+\[
+(2, 3)
+\]
+
+\textbf{} 
+\newline
+\textbf{Paso 2: Calcular las segundas derivadas}
+
+\textbf{} 
+\newline
+Calculamos las segundas derivadas parciales:
+
+\textbf{} 
+\newline
+\subsubsection*{Segunda derivada parcial con respecto a \( x \)}
+
+\textbf{} 
+\newline
+\[
+f_{xx} = \frac{\partial^2 f}{\partial x^2} = 2
+\]
+
+\textbf{} 
+\newline
+\subsubsection*{Segunda derivada parcial con respecto a \( y \)}
+
+\textbf{} 
+\newline
+\[
+f_{yy} = \frac{\partial^2 f}{\partial y^2} = 2
+\]
+
+\textbf{} 
+\newline
+\subsubsection*{Segunda derivada mixta}
+
+\textbf{} 
+\newline
+\[
+f_{xy} = \frac{\partial^2 f}{\partial x \partial y} = 0
+\]
+
+\textbf{} 
+\newline
+\textbf{Paso 3: Evaluar las segundas derivadas en el punto crítico}
+
+\textbf{} 
+\newline
+Calculamos \( D \) en el punto crítico \( (2, 3) \):
+
+\[
+D(x, y) = f_{xx}(x, y)f_{yy}(x, y) - [f_{xy}(x, y)]^2
+\]
+
+Sustituyendo:
+
+\[
+D(2, 3) = f_{xx}(2, 3) \cdot f_{yy}(2, 3) - [f_{xy}(2, 3)]^2
+\]
+
+\[
+D(2, 3) = 2 \cdot 2 - 0^2 = 4
+\]
+
+\textbf{} 
+\newline
+\textbf{Paso 4: Clasificar el punto crítico}
+
+\textbf{} 
+\newline
+Ya que \( D(2, 3) > 0 \) y \( f_{xx}(2, 3) > 0 \), podemos concluir que el punto crítico \( (2, 3) \) es un mínimo relativo.
+
+\textbf{} 
+\newline
+\textbf{Resumen}
+
+\textbf{} 
+\newline
+
+El punto crítico \( (2, 3) \) es un mínimo relativo de la función \( f(x, y) = x^2 + y^2 - 4x - 6y \).
+
+\textbf{} 
+\newline
+\begin{defi}[Extremos Absolutos]
+
+\textbf{} 
+\newline
+Un punto \( (a, b) \) de una función \( f: D \subset \mathbb{R}^2 \rightarrow \mathbb{R} \) se considera un \textbf{máximo absoluto} si para todos los puntos \( (x, y) \) en el dominio \( D \), se cumple que 
+
+\begin{align*}
+    f(a, b) \geq f(x, y).
+\end{align*}
+
+De manera similar, un punto \( (a, b) \) es un \textbf{mínimo absoluto} si para todos los puntos \( (x, y) \) en el dominio \( D \), se cumple que 
+
+\begin{align*}
+    f(a, b) \leq f(x, y).
+\end{align*} 
+\end{defi}
+
+
+\begin{ejem}
+A través de estos ejercicios, aprenderemos a aplicar técnicas de optimización, como el uso de derivadas parciales y la prueba de la segunda derivada, para determinar la naturaleza de los extremos en funciones absolutas. Este enfoque es particularmente útil en situaciones donde el valor absoluto afecta la forma de la función y, por lo tanto, puede cambiar la localización y la clasificación de los extremos.
+
+\textbf{} 
+\newline
+ Consideremos la función 
+ 
+\begin{align*}
+    f(x, y) = x^2 + y^2 - 2x
+\end{align*}
+
+definida sobre el conjunto 
+
+\begin{align*}
+    R = \{(x, y) \in \mathbb{R}^2 : -1 \leq x \leq 1, -1 \leq y \leq 1\}.
+\end{align*}
+
+\end{ejem}
+  
+
+\textbf{} 
+\newline
+\textbf{Paso 1: Encontrar los puntos críticos}
+
+\textbf{} 
+\newline
+Calculamos las derivadas parciales de \( f \):
+
+\subsubsection*{Derivada parcial con respecto a \( x \)}
+
+\[
+f_x(x, y) = \frac{\partial f}{\partial x} = 2x - 2
+\]
+
+\subsubsection*{Derivada parcial con respecto a \( y \)}
+
+\[
+f_y(x, y) = \frac{\partial f}{\partial y} = 2y
+\]
+
+Igualamos las derivadas a cero para encontrar los puntos críticos:
+
+\[
+2x - 2 = 0 \quad \Rightarrow \quad x = 1 \tag{1}
+\]
+
+\[
+2y = 0 \quad \Rightarrow \quad y = 0 \tag{2}
+\]
+
+Por lo tanto, el único punto crítico en el interior del dominio es:
+
+\[
+(1, 0)
+\]
+
+\textbf{} 
+\newline
+\textbf{Paso 2: Evaluar la función en los puntos críticos}
+
+\textbf{} 
+\newline
+Calculamos \( f(1, 0) \):
+
+\[
+f(1, 0) = 1^2 + 0^2 - 2 \cdot 1 = 1 - 2 = -1
+\]
+
+\textbf{} 
+\newline
+\textbf{Paso 3: Evaluar la función en los bordes del conjunto \( R \)}
+
+\textbf{} 
+\newline
+Los bordes del conjunto \( R \) son los siguientes:
+
+1. Línea \( x = -1 \), \( -1 \leq y \leq 1 \):
+   \[
+   f(-1, y) = (-1)^2 + y^2 - 2(-1) = 1 + y^2 + 2 = y^2 + 3
+   \]
+   Evaluamos en los extremos:
+   \[
+   f(-1, -1) = (-1)^2 + (-1)^2 + 2 = 4
+   \]
+   \[
+   f(-1, 1) = (-1)^2 + (1)^2 + 2 = 4
+   \]
+
+2. Línea \( x = 1 \), \( -1 \leq y \leq 1 \):
+   \[
+   f(1, y) = 1^2 + y^2 - 2(1) = y^2 - 1
+   \]
+   Evaluamos en los extremos:
+   \[
+   f(1, -1) = (-1)^2 - 1 = 0
+   \]
+   \[
+   f(1, 1) = (1)^2 - 1 = 0
+   \]
+
+3. Línea \( y = -1 \), \( -1 \leq x \leq 1 \):
+   \[
+   f(x, -1) = x^2 + (-1)^2 - 2x = x^2 + 1 - 2x
+   \]
+   Esta es una parábola con \( f_x(x, -1) = 2x - 2 = 0 \) dando \( x = 1 \):
+   \[
+   f(1, -1) = 0 \quad \text{(ya calculado)}
+   \]
+
+4. Línea \( y = 1 \), \( -1 \leq x \leq 1 \):
+   \[
+   f(x, 1) = x^2 + (1)^2 - 2x = x^2 + 1 - 2x
+   \]
+   Esta también es una parábola con \( f_x(x, 1) = 2x - 2 = 0 \) dando \( x = 1 \):
+   \[
+   f(1, 1) = 0 \quad \text{(ya calculado)}
+   \]
+
+\textbf{} 
+\newline
+\textbf{Paso 4: Resumen de los valores calculados}
+
+\textbf{} 
+\newline
+- \( f(1, 0) = -1 \)
+- \( f(-1, -1) = 4 \)
+- \( f(-1, 1) = 4 \)
+- \( f(1, -1) = 0 \)
+- \( f(1, 1) = 0 \)
+
+\textbf{} 
+\newline
+\textbf{Paso 5: Conclusión}
+
+\textbf{} 
+\newline
+Los valores máximos y mínimos absolutos de \( f \) sobre el conjunto \( R \) son:
+
+- Máximo absoluto: \( 4 \) en los puntos \( (-1, -1) \) y \( (-1, 1) \).
+- Mínimo absoluto: \( -1 \) en el punto \( (1, 0) \).
+\subsection*{Grafica}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{CAPITULOS/imagenss/MinimoYMaximo1.png}
+    \caption{Superficie}
+    \label{fig:enter-label}
+\end{figure}
+
+\section{Multiplicadores de Lagrange}
+\begin{defi}[Multiplicadores de Lagrange]
+
+Los Multiplicadores de Lagrange son una herramienta matemática utilizada para encontrar los máximos y mínimos de una función \( f(x, y, z, \dots) \) sujeta a una o más restricciones de la forma \( g(x, y, z, \dots) = c \). En otras palabras, es un método para optimizar una función cuando hay condiciones adicionales (restricciones) que deben cumplirse.
+
+\textbf{} 
+\newline
+\textbf{Idea fundamental}
+
+\textbf{} 
+\newline
+En términos geométricos, la idea detrás de los Multiplicadores de Lagrange es que en el punto de máxima o mínima, las superficies de nivel de la función objetivo \( f \) y la restricción \( g \) son \textbf{tangentes}. Esto significa que sus gradientes serán paralelos, lo cual se expresa como:
+
+\[
+\nabla f(x, y, z, \dots) = \lambda \nabla g(x, y, z, \dots)
+\]
+
+Donde:
+\begin{itemize}
+    \item \( \nabla f \) es el \textbf{gradiente} de la función objetivo \( f \), que apunta en la dirección de máximo crecimiento de \( f \).
+    \item \( \nabla g \) es el \textbf{gradiente} de la restricción \( g \), que indica cómo cambia la restricción.
+    \item \( \lambda \) es el multiplicador de Lagrange, que ajusta la proporción entre los gradientes.
+\end{itemize}
+
+Este sistema de ecuaciones permite resolver simultáneamente las condiciones impuestas por la función objetivo y las restricciones. Además, si hay varias restricciones, el método se extiende utilizando varios multiplicadores de Lagrange (\( \lambda_1, \lambda_2, \dots \)).
+
+\textbf{} 
+\newline
+\textbf{Procedimiento}
+
+\textbf{} 
+\newline
+Para aplicar los multiplicadores de Lagrange, se sigue el siguiente procedimiento:
+
+\begin{enumerate}
+    \item \textbf{Plantear las ecuaciones:} Primero, formamos la llamada \textbf{función de Lagrange}:
+    \[
+    \mathcal{L}(x, y, z, \dots, \lambda) = f(x, y, z, \dots) - \lambda (g(x, y, z, \dots) - c)
+    \]
+    
+    \item \textbf{Calcular las derivadas parciales:} Luego, calculamos las derivadas parciales de \( \mathcal{L} \) con respecto a \( x, y, z, \dots \) y también respecto a \( \lambda \). 
+    
+    \item \textbf{Resolver el sistema de ecuaciones:} Finalmente, resolvemos el sistema de ecuaciones simultáneo para encontrar los valores de \( x, y, z, \dots \) y \( \lambda \) que optimizan la función bajo la restricción.
+\end{enumerate}
+
+\textbf{} 
+\newline
+Nuestro principal objetivo es aprender a optimizar funciones de varias variables que están sujetas a restricciones. Este método es fundamental para resolver problemas donde queremos encontrar los máximos o mínimos de una función, pero con la condición de que la solución debe cumplir con ciertas limitaciones.
+\end{defi}
+
+\begin{ejem}
+Encuentra los valores máximos y mínimos de la función \( f(x, y) = x^2 + y^2 \) sujeta a la restricción \( g(x, y) = x^2 + 2y^2 = 6 \)
+
+\end{ejem}
+
+\textbf{} 
+\newline
+\textbf{Solución}
+
+\textbf{} 
+\newline
+\textbf{Paso 1: Definir la función de Lagrange}
+
+La función objetivo que queremos optimizar es:
+
+\begin{align*}
+    f(x, y) = x^2 + y^2
+\end{align*}
+
+\textbf{} 
+\newline
+La restricción es:
+
+\begin{align*}
+    g(x, y) = x^2 + 2y^2 - 6 = 0
+\end{align*}
+
+\textbf{} 
+\newline
+Formamos la función de Lagrange:
+
+\begin{align*}
+    \mathcal{L}(x, y, \lambda) = f(x, y) - \lambda(g(x, y) - 0)
+\end{align*}
+
+\textbf{} 
+\newline
+Esto se traduce en:
+
+\begin{align*}
+    \mathcal{L}(x, y, \lambda) = x^2 + y^2 - \lambda (x^2 + 2y^2 - 6)
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf{Paso 2: Encontrar las derivadas parciales}
+
+\textbf{} 
+\newline
+Ahora, calculamos las derivadas parciales de \( \mathcal{L} \) con respecto a \( x \), \( y \) y \( \lambda \).
+
+1. Derivada de \( \mathcal{L} \) con respecto a \( x \):
+
+\begin{align*}
+    \frac{\partial \mathcal{L}}{\partial x} = 2x - \lambda(2x) = 0
+\end{align*}
+
+2. Derivada de \( \mathcal{L} \) con respecto a \( y \):
+
+\begin{align*}
+    \frac{\partial \mathcal{L}}{\partial y} = 2y - \lambda(4y) = 0
+\end{align*}
+
+3. Derivada de \( \mathcal{L} \) con respecto a \( \lambda \) (la restricción):
+
+\begin{align*}
+    \frac{\partial \mathcal{L}}{\partial \lambda} = x^2 + 2y^2 - 6 = 0
+\end{align*}
+
+\textbf{Paso 3: Resolver el sistema de ecuaciones}
+
+\textbf{} 
+\newline
+Tenemos el siguiente sistema de ecuaciones:
+
+\begin{align*}
+    2x - 2\lambda x &= 0 \\
+    2y - 4\lambda y &= 0 \\
+    x^2 + 2y^2 &= 6
+\end{align*}
+
+\subsubsection*{Ecuación (1):}
+\[
+2x(1 - \lambda) = 0
+\]
+Esto implica que \( x = 0 \) o \( \lambda = 1 \).
+\subsubsection*{Ecuación (2):}
+
+\textbf{} 
+\newline
+\begin{align*}
+    2y(1 - 2\lambda) = 0
+\end{align*}
+Esto implica que \( y = 0 \) o \( \lambda = \frac{1}{2} \).
+
+\textbf{} 
+\newline
+\textbf{Paso 4: Analizar los casos}
+
+\textbf{} 
+\newline
+\subsubsection*{Caso 1: \( x = 0 \)}
+
+\textbf{} 
+\newline
+Si \( x = 0 \), de la ecuación \( x^2 + 2y^2 = 6 \), obtenemos:
+
+\begin{align*}
+    2y^2 = 6 \quad \Rightarrow \quad y^2 = 3 \quad \Rightarrow \quad y = \pm \sqrt{3}
+\end{align*}
+
+En este caso, los puntos son \( (0, \sqrt{3}) \) y \( (0, -\sqrt{3}) \).
+
+Evaluando la función objetivo \( f(x, y) = x^2 + y^2 \) en estos puntos:
+
+\begin{align*}
+    f(0, \sqrt{3}) = 0^2 + (\sqrt{3})^2 = 3
+\end{align*}
+
+\begin{align*}
+    f(0, -\sqrt{3}) = 0^2 + (-\sqrt{3})^2 = 3
+\end{align*}
+
+\textbf{} 
+\newline
+\textbf*{Caso 2: \( \lambda = 1 \)}
+
+
+Si \( \lambda = 1 \), de la ecuación \( 2x(1 - \lambda) = 0 \), no obtenemos nueva información. 
+
+\textbf{} 
+\newline
+\textbf*{Caso 3: \( \lambda = \frac{1}{2} \)}
+
+\textbf{} 
+\newline
+Si \( \lambda = \frac{1}{2} \), sustituimos en la ecuación \( 2y(1 - 2\lambda) = 0 \), que también nos lleva a obtener \( y = 0 \).
+
+\textbf{} 
+\newline
+\textbf{Paso 5}
+
+\textbf{} 
+\newline
+Los valores máximos y mínimos de la función objetivo \( f(x, y) = x^2 + y^2 \) sujetos a la restricción \( g(x, y) = x^2 + 2y^2 = 6 \) ocurren en los puntos \( (0, \sqrt{3}) \) y \( (0, -\sqrt{3}) \), y el valor de la función en ambos puntos es 3.
+
+Por lo tanto, el valor mínimo es \( 3 \). Como la función es de la forma cuadrática \( f(x, y) = x^2 + y^2 \), no hay un valor máximo finito en este caso debido a las características de la restricción.
+\end{document}
+
+
